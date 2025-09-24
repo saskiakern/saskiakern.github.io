@@ -1,0 +1,31 @@
+/* Grundlayout */
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #fafafa;
+  color: #222;
+  text-align: center;
+  padding: 40px;
+}
+
+/* Navigation */
+nav {
+  margin: 20px 0;
+}
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #00796b;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: #004d40;
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #888;
+}
