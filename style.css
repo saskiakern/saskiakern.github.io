@@ -1,31 +1,112 @@
-/* Grundlayout */
-body {
+/* Reset */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Grundlayout */
+:root {
+  --header-height: 80px; /* Fallback, wird durch JS überschrieben */
+}
+
+body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   background-color: #fafafa;
   color: #222;
-  text-align: center;
-  padding: 40px;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Navigation */
+/* Header (fixiert) */
+header {
+  background: #00796b;
+  color: white;
+  padding: 16px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
 nav {
-  margin: 20px 0;
+  margin-top: 10px;
 }
+
 nav a {
-  margin: 0 15px;
+  margin: 0 12px;
   text-decoration: none;
-  color: #00796b;
-  font-weight: bold;
-  transition: color 0.3s;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s ease;
 }
+
 nav a:hover {
-  color: #004d40;
+  opacity: 0.85;
+}
+
+/* Main Content */
+main {
+  flex: 1;
+  padding: calc(var(--header-height) + 24px) 20px 40px; /* Dynamischer Platz für fixen Header */
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+main h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #00796b;
+}
+
+main ul {
+  text-align: left;
+  margin: 0 auto;
+  max-width: 700px;
+  line-height: 1.9;
 }
 
 /* Footer */
 footer {
-  margin-top: 40px;
-  font-size: 0.9rem;
-  color: #888;
+  background: #f1f1f1;
+  color: #555;
+  text-align: center;
+  padding: 14px 20px;
+  font-size: 0.95rem;
+  border-top: 1px solid #ddd;
 }
+
+footer a {
+  color: #00695c;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsives Design */
+@media (max-width: 700px) {
+  nav a {
+    display: inline-block;
+    margin: 6px 10px;
+  }
+  header h1 {
+    font-size: 1.2rem;
+  }
+  main {
+    padding: calc(var(--header-height) + 16px) 16px 32px;
+  }
+}
+
